@@ -88,9 +88,12 @@ ln -s ${config.uvpart.outputs.environment}/bin/aider $out/bin/aider
             default = aider-chat;
           };
 
-          apps.aider = {
-            type = "app";
-            program = "${self'.packages.aider-chat}/bin/aider";
+          apps = rec {
+            aider = {
+              type = "app";
+              program = "${self'.packages.aider-chat}/bin/aider";
+            };
+            default = aider;
           };
         };
     };
