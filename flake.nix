@@ -81,10 +81,10 @@
           };
 
           packages = rec {
-            aider-chat = pkgs.runCommand "aider-chat" {} ''
-mkdir -p $out/bin
-ln -s ${config.uvpart.outputs.environment}/bin/aider $out/bin/aider
-'';
+            aider-chat = pkgs.runCommand "aider-chat" { } ''
+              mkdir -p $out/bin
+              ln -s ${config.uvpart.outputs.environment}/bin/aider $out/bin/aider
+            '';
             default = aider-chat;
           };
 

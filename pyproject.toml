@@ -4,6 +4,4 @@ version = "0.1.0"
 description = "Environment definition for aider-chat for use with Nix"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = [
-    "aider-chat>=0.77.1",
-]
+dependencies = ["aider-chat>=0.77.1"]
