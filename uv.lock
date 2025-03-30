@@ -4,7 +4,7 @@ requires-python = ">=3.12"
 
 [[package]]
 name = "aider-chat"
-version = "0.79.1"
+version = "0.79.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiohappyeyeballs" },
@@ -103,9 +103,9 @@ dependencies = [
     { name = "yarl" },
     { name = "zipp" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/72/e8/faf6fee256055b02400d8a9f5b0a6f4496bcc1ff5f093001094623e9f26c/aider_chat-0.79.1.tar.gz", hash = "sha256:85ac38ae57f275231e8cdbfa021aaf024f8704f7f2f88804e4eaa4709def1611", size = 1244338 }
+sdist = { url = "https://files.pythonhosted.org/packages/e7/7d/b433c16b88c5184a064a0d9d2491db3d4759459e9ae640bdcef9cb54b6e1/aider_chat-0.79.2.tar.gz", hash = "sha256:655b82f9d05e15b16fffc5a037bf56b517dc5c06264b6334c184c9b113f5ed5a", size = 1247339 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f7/89/568cb4d8a38eff53b4b04b4c1fe10039a11ea5e075ea7c6229c928430f43/aider_chat-0.79.1-py3-none-any.whl", hash = "sha256:4291130a5f2d94e309bf0f7d8032fcfd8393f9cdf56f4aecadefc0c016fd36aa", size = 326078 },
+    { url = "https://files.pythonhosted.org/packages/97/e6/ca8c31eba7ff880598ed919c8a8997f7d26f0bca3268882dbd2b20546932/aider_chat-0.79.2-py3-none-any.whl", hash = "sha256:ee36f4cdf95609627fba351c6efc0c00e77769cb98f7d2262dec9320e3e75ffc", size = 326058 },
 ]
 
 [[package]]
@@ -117,7 +117,7 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "aider-chat", specifier = "==0.79.1" }]
+requires-dist = [{ name = "aider-chat", specifier = "==0.79.2" }]
 
 [[package]]
 name = "aiohappyeyeballs"
