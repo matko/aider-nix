@@ -310,11 +310,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1742406714,
-        "narHash": "sha256-DBTMJiUARf+wR7femLT71ANnQwiMwiIVinDMduf07eY=",
+        "lastModified": 1743957032,
+        "narHash": "sha256-LXyii5mrAbkn62yKlk2t141ReYONiRSZ7pQCDS82u2k=",
         "owner": "matko",
         "repo": "uvpart",
-        "rev": "ad999151626a0b7184c6b1b35775765efd03b034",
+        "rev": "c574d0572ba6a080ec87665b069090bfd3fa73fb",
         "type": "github"
       },
       "original": {
@@ -332,11 +332,11 @@
         "treefmt-nix": "treefmt-nix_3"
       },
       "locked": {
-        "lastModified": 1743439159,
-        "narHash": "sha256-+Lx3jxe7cvPnd7t97+ipIjYsW7qFkVXL+FU29UpaL1Q=",
+        "lastModified": 1743947258,
+        "narHash": "sha256-/11a0fYKWOGZ5EFqPDHXqm8ItwVktT2yT4vUWwiBrKA=",
         "owner": "matko",
         "repo": "uvpart-fixups",
-        "rev": "cf5449dbe2e268c57511f3a946613eb8d3e1129c",
+        "rev": "6062f4c038470138b231b46cff0e6c1f9d1a5271",
         "type": "github"
       },
       "original": {

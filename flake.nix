@@ -55,6 +55,7 @@
         {
           self',
           pkgs,
+          lib,
           config,
           ...
         }:
@@ -80,18 +81,46 @@
             publishApps = false;
           };
 
-          packages = rec {
-            aider-chat = pkgs.runCommand "aider-chat" { } ''
-              mkdir -p $out/bin
-              ln -s ${config.uvpart.outputs.environment}/bin/aider $out/bin/aider
-            '';
-            default = aider-chat;
-          };
+          packages =
+            let
+              package = pkgs.callPackage (
+                {
+                  withAllFeatures ? false,
+                  withBrowser ? false,
+                  withHelp ? false,
+                  withPlaywright ? false,
+                }:
+                let
+                  dependencyGroups =
+                    if withAllFeatures then
+                      "all"
+                    else
+                      (lib.optional withBrowser "browser")
+                      ++ (lib.optional withHelp "help")
+                      ++ (lib.optional withPlaywright "playwright");
+                  environment = config.uvpart.outputs.environment.override { inherit dependencyGroups; };
+                in
+                pkgs.runCommand "aider-chat" { } ''
+                  mkdir -p $out/bin
+                  ln -s ${environment}/bin/aider $out/bin/aider
+                ''
+              ) { };
+            in
+            {
+              aider-chat = package;
+              aider-chat-full = package.override { withAllFeatures = true; };
+              default = package;
+              env = config.uvpart.outputs.environment;
+            };
 
           apps = rec {
             aider = {
               type = "app";
               program = "${self'.packages.aider-chat}/bin/aider";
+            };
+            aider-full = {
+              type = "app";
+              program = "${self'.packages.aider-chat-full}/bin/aider";
             };
             default = aider;
           };
