@@ -37,7 +37,7 @@
   };
 
   outputs =
-    inputs@{ flake-parts, ... }:
+    inputs@{ self, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       debug = true;
       imports = [
@@ -96,5 +96,10 @@
             default = aider;
           };
         };
+      flake = {
+        homeModules = {
+          aider = import ./home-module.nix self.packages;
+        };
+      };
     };
 }
