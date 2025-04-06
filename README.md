@@ -25,3 +25,76 @@ nix profile install github:matko/aider-nix
 ```
 
 If you use a flake-based home-manager or system configuration, You can add this flake as an extra input, and get `aider-chat` from the exposed package set.
+
+## Home Manager Module
+
+This project includes a Home Manager module that allows you to easily install aider and configure it with a `.aider.conf.yml` file in your home directory.
+
+### Usage
+
+Add the flake to your Home Manager configuration:
+
+```nix
+{
+  inputs = {
+    # ... your other inputs
+    aider-nix.url = "github:matko/aider-nix";
+  };
+
+  outputs = { self, nixpkgs, home-manager, aider-nix, ... }: {
+    # ... your other outputs
+    homeConfigurations = {
+      "yourusername" = home-manager.lib.homeManagerConfiguration {
+        # ... your other configuration
+        modules = [
+          aider-nix.homeManagerModules.default
+          {
+            programs.aider = {
+              enable = true;
+              settings = {
+                # Your aider configuration
+                model = "gpt-4";
+                edit_format = "diff";
+                auto_commits = false;
+                # Add any other settings you want in your .aider.conf.yml
+              };
+            };
+          }
+        ];
+      };
+    };
+  };
+}
+```
+
+### Configuration Options
+
+The module provides the following options:
+
+- `enable`: Boolean to enable/disable aider (default: false)
+- `package`: The aider package to use (defaults to the package in this project, but you can override this with pkgs.aider-chat or similar if you like)
+- `settings`: Configuration for aider, written to ~/.aider.conf.yml
+
+### Example Configuration
+
+Here's an example of a more complete configuration:
+
+```nix
+programs.aider = {
+  enable = true;
+  settings = {
+    model = "gpt-4-turbo";
+    temperature = 0.0;
+    edit_format = "simple";
+    auto_commits = false;
+    context_window = 32000;
+    max_tokens = 4000;
+    openai_api_base = "https://api.openai.com/v1";
+    # You can add your API key here, but it's better to use environment variables.
+    # IMPORTANT: secrets included here will go unencrypted into your nix store!!
+    # openai_api_key = "your-api-key";
+  };
+};
+```
+
+Note: It's generally better to set your API key as an environment variable rather than in the configuration file. Any secrets included here (even if commented out) will go unencrypted into your nix store, and they'll be readable to any user on your system or any system where the resulting nix closure gets copied to.
