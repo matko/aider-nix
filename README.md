@@ -26,6 +26,41 @@ nix profile install github:matko/aider-nix
 
 If you use a flake-based home-manager or system configuration, You can add this flake as an extra input, and get `aider-chat` from the exposed package set.
 
+## Optional Features
+
+This package supports several optional features that can be enabled as needed:
+
+- **Browser support**: Enables web browsing capabilities
+- **Help features**: Adds additional help documentation
+- **Playwright support**: Adds support for browser automation with Playwright
+- **All features**: Enables all optional features at once
+
+You can enable these features when using the package directly or through the Home Manager module.
+
+### Using with Nix Run or Profile Install
+
+To use aider with specific features enabled:
+
+```bash
+# Run with all features enabled
+nix run github:matko/aider-nix#aider-chat-full
+
+# Install with all features enabled
+nix profile install github:matko/aider-nix#aider-chat-full
+```
+
+### Using in a Flake
+
+When importing the package in your own flake, you can override the package to enable specific features:
+
+```nix
+aider-chat = aider-nix.packages.${system}.aider-chat.override {
+  withBrowser = true;
+  withHelp = true;
+  # Other options: withPlaywright, withAllFeatures
+};
+```
+
 ## Home Manager Module
 
 This project includes a Home Manager module that allows you to easily install aider and configure it with a `.aider.conf.yml` file in your home directory.
@@ -51,6 +86,11 @@ Add the flake to your Home Manager configuration:
           {
             programs.aider = {
               enable = true;
+              # Optional features
+              enableBrowser = true;
+              enableHelp = true;
+              # enablePlaywright = true;
+              # enableAllFeatures = true;
               settings = {
                 # Your aider configuration
                 model = "gpt-4";
@@ -73,6 +113,10 @@ The module provides the following options:
 
 - `enable`: Boolean to enable/disable aider (default: false)
 - `package`: The aider package to use (defaults to the package in this project, but you can override this with pkgs.aider-chat or similar if you like)
+- `enableAllFeatures`: Boolean to enable all optional features (default: false)
+- `enableBrowser`: Boolean to enable browser support (default: false)
+- `enableHelp`: Boolean to enable help features (default: false)
+- `enablePlaywright`: Boolean to enable playwright support (default: false)
 - `settings`: Configuration for aider, written to ~/.aider.conf.yml
 
 ### Example Configuration
@@ -82,6 +126,8 @@ Here's an example of a more complete configuration:
 ```nix
 programs.aider = {
   enable = true;
+  enableBrowser = true;
+  enableHelp = true;
   settings = {
     model = "gpt-4-turbo";
     temperature = 0.0;
