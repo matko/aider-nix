@@ -4,7 +4,7 @@ requires-python = "==3.12.*"
 
 [[package]]
 name = "aider-chat"
-version = "0.83.1"
+version = "0.83.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiohappyeyeballs" },
@@ -124,9 +124,9 @@ dependencies = [
     { name = "yarl" },
     { name = "zipp" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/fe/4b/20088dcb8b03598654ce473e5444771049e159874a8838cbc74bc34bc193/aider_chat-0.83.1.tar.gz", hash = "sha256:c892800eb0855367fddc0c7dd9cac6f7f3680960dfb0a313d61c2e0c2f0f56cc", size = 1302231 }
+sdist = { url = "https://files.pythonhosted.org/packages/1b/76/5621ce9d7e3a4fa2b7015a422023a238089a2628bc522762b2193cc6e8c0/aider_chat-0.83.2.tar.gz", hash = "sha256:b3b1d8d532313d22cec3f418773f2c7623e21c09fd6ae2bcaeba9726b73b0022", size = 1305916 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/54/ed/53568facdd5c41076b5741e1da36e6be56b41876f75e805bb62dcd372dad/aider_chat-0.83.1-py3-none-any.whl", hash = "sha256:20f9901078bd1938054d7e6b116f1972b83ca432ddcb0cdb2ca990e0d0c2d484", size = 363773 },
+    { url = "https://files.pythonhosted.org/packages/fa/3c/4d47425418a9089f5706cc0f1505722a3edab583b75e88283a38d7dc29d7/aider_chat-0.83.2-py3-none-any.whl", hash = "sha256:61d5efdbca1eb2d3a219a71331423d45a5655ede684319ef5dd828727d6039c2", size = 367583 },
 ]
 
 [package.optional-dependencies]
@@ -247,7 +247,7 @@ playwright = [
 
 [[package]]
 name = "aider-nix"
-version = "0.83.1"
+version = "0.83.2"
 source = { virtual = "." }
 dependencies = [
     { name = "aider-chat" },
@@ -269,11 +269,11 @@ playwright = [
 
 [package.metadata]
 requires-dist = [
-    { name = "aider-chat", specifier = "==0.83.1" },
-    { name = "aider-chat", extras = ["browser"], marker = "extra == 'browser'", specifier = "==0.83.1" },
-    { name = "aider-chat", extras = ["help"], marker = "extra == 'help'", specifier = "==0.83.1" },
-    { name = "aider-chat", extras = ["help", "playwright", "browser"], marker = "extra == 'all'", specifier = "==0.83.1" },
-    { name = "aider-chat", extras = ["playwright"], marker = "extra == 'playwright'", specifier = "==0.83.1" },
+    { name = "aider-chat", specifier = "==0.83.2" },
+    { name = "aider-chat", extras = ["browser"], marker = "extra == 'browser'", specifier = "==0.83.2" },
+    { name = "aider-chat", extras = ["help"], marker = "extra == 'help'", specifier = "==0.83.2" },
+    { name = "aider-chat", extras = ["help", "playwright", "browser"], marker = "extra == 'all'", specifier = "==0.83.2" },
+    { name = "aider-chat", extras = ["playwright"], marker = "extra == 'playwright'", specifier = "==0.83.2" },
 ]
 provides-extras = ["help", "playwright", "browser", "all"]
 
@@ -511,11 +511,11 @@ wheels = [
 
 [[package]]
 name = "configargparse"
-version = "1.7"
+version = "1.7.1"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/70/8a/73f1008adfad01cb923255b924b1528727b8270e67cb4ef41eabdc7d783e/ConfigArgParse-1.7.tar.gz", hash = "sha256:e7067471884de5478c58a511e529f0f9bd1c66bfef1dea90935438d6c23306d1", size = 43817 }
+sdist = { url = "https://files.pythonhosted.org/packages/85/4d/6c9ef746dfcc2a32e26f3860bb4a011c008c392b83eabdfb598d1a8bbe5d/configargparse-1.7.1.tar.gz", hash = "sha256:79c2ddae836a1e5914b71d58e4b9adbd9f7779d4e6351a637b7d2d9b6c46d3d9", size = 43958 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6f/b3/b4ac838711fd74a2b4e6f746703cf9dd2cf5462d17dac07e349234e21b97/ConfigArgParse-1.7-py3-none-any.whl", hash = "sha256:d249da6591465c6c26df64a9f73d2536e743be2f244eb3ebe61114af2f94f86b", size = 25489 },
+    { url = "https://files.pythonhosted.org/packages/31/28/d28211d29bcc3620b1fece85a65ce5bb22f18670a03cd28ea4b75ede270c/configargparse-1.7.1-py3-none-any.whl", hash = "sha256:8b586a31f9d873abd1ca527ffbe58863c99f36d896e2829779803125e83be4b6", size = 25607 },
 ]
 
 [[package]]
@@ -1397,10 +1397,10 @@ wheels = [
 
 [[package]]
 name = "nvidia-nvjitlink-cu12"
-version = "12.8.93"
+version = "12.9.41"
 source = { registry = "https://pypi.org/simple" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f6/74/86a07f1d0f42998ca31312f998bd3b9a7eff7f52378f4f270c8679c77fb9/nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl", hash = "sha256:81ff63371a7ebd6e6451970684f916be2eab07321b73c9d244dc2b4da7f73b88", size = 39254836 },
+    { url = "https://files.pythonhosted.org/packages/86/69/01de7245968084eb73e50512daa72b36e27dfd2994bf268e6a205eff5093/nvidia_nvjitlink_cu12-12.9.41-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl", hash = "sha256:c3a2cd87cecf3f0ca5e5df97115ede3a81efec1d4b7e2ec89d13f66834042930", size = 39748650 },
 ]
 
 [[package]]
