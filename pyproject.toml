@@ -1,13 +1,13 @@
 [project]
 name = "aider-nix"
-version = "0.85.2"
+version = "0.85.5"
 description = "Environment definition for aider-chat for use with Nix"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
-dependencies = ["aider-chat==0.85.2"]
+dependencies = ["aider-chat==0.85.5"]
 
 [project.optional-dependencies]
-help = ["aider-chat[help]==0.85.2"]
-playwright = ["aider-chat[playwright]==0.85.2"]
-browser = ["aider-chat[browser]==0.85.2"]
-all = ["aider-chat[help,playwright,browser]==0.85.2"]
+help = ["aider-chat[help]==0.85.5"]
+playwright = ["aider-chat[playwright]==0.85.5"]
+browser = ["aider-chat[browser]==0.85.5"]
+all = ["aider-chat[help,playwright,browser]==0.85.5"]
