@@ -4,7 +4,7 @@ requires-python = "==3.12.*"
 
 [[package]]
 name = "aider-chat"
-version = "0.86.0"
+version = "0.86.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiohappyeyeballs" },
@@ -124,9 +124,9 @@ dependencies = [
     { name = "yarl" },
     { name = "zipp" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/4e/b5/5add755c93b11c0d699c08758693f6868401eeeeb108afa9d9c460144d02/aider_chat-0.86.0.tar.gz", hash = "sha256:8bd50e1ab4f813b3637bb11c7b9504fca081b5316bfa79678fd9c5992c9bf0b7", size = 1314018, upload-time = "2025-08-09T15:55:40.043Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/87/60/42ee32c47d6711635d591c729eea6bc56fa244099a18e0b82da064951af9/aider_chat-0.86.1.tar.gz", hash = "sha256:48e489d20a4dfdd90ac4acc781f0170f688aaa5c5f2017d035e2d947fb801bbb", size = 1314126, upload-time = "2025-08-13T15:46:30.185Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/21/08/37de0f34b2f6461ddb5e125318e3b54d4b9a33f20134721c0e88fa952fec/aider_chat-0.86.0-py3-none-any.whl", hash = "sha256:386be777c7197494a020337f18c15660fe32a5b4a350123e583bd07ad25365d8", size = 373254, upload-time = "2025-08-09T15:55:37.574Z" },
+    { url = "https://files.pythonhosted.org/packages/a0/19/024e562ab9204dd30d1304e8cdfea8c998a0dc9fab72feb5c321fec804df/aider_chat-0.86.1-py3-none-any.whl", hash = "sha256:3af8282c423887f45e65ad508a7b2b67bbedc271a78ef098f5cbe839afff4ed7", size = 373232, upload-time = "2025-08-13T15:46:27.703Z" },
 ]
 
 [package.optional-dependencies]
@@ -251,7 +251,7 @@ playwright = [
 
 [[package]]
 name = "aider-nix"
-version = "0.86.0"
+version = "0.86.1"
 source = { virtual = "." }
 dependencies = [
     { name = "aider-chat" },
@@ -273,11 +273,11 @@ playwright = [
 
 [package.metadata]
 requires-dist = [
-    { name = "aider-chat", specifier = "==0.86.0" },
-    { name = "aider-chat", extras = ["browser"], marker = "extra == 'browser'", specifier = "==0.86.0" },
-    { name = "aider-chat", extras = ["help"], marker = "extra == 'help'", specifier = "==0.86.0" },
-    { name = "aider-chat", extras = ["help", "playwright", "browser"], marker = "extra == 'all'", specifier = "==0.86.0" },
-    { name = "aider-chat", extras = ["playwright"], marker = "extra == 'playwright'", specifier = "==0.86.0" },
+    { name = "aider-chat", specifier = "==0.86.1" },
+    { name = "aider-chat", extras = ["browser"], marker = "extra == 'browser'", specifier = "==0.86.1" },
+    { name = "aider-chat", extras = ["help"], marker = "extra == 'help'", specifier = "==0.86.1" },
+    { name = "aider-chat", extras = ["help", "playwright", "browser"], marker = "extra == 'all'", specifier = "==0.86.1" },
+    { name = "aider-chat", extras = ["playwright"], marker = "extra == 'playwright'", specifier = "==0.86.1" },
 ]
 provides-extras = ["help", "playwright", "browser", "all"]
 
